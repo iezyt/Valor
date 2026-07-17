@@ -1,0 +1,235 @@
+:root {
+  --bg: #0a0a0a;
+  --panel: #1c1c1e;
+  --panel-border: #2e2e30;
+  --text: #e8e8e8;
+  --text-dim: #7a7a7a;
+  --pill: #1a1a1c;
+  --pill-hover: #262628;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 40px 20px;
+  position: relative;
+}
+
+/* ---------------------------------------------------
+   MAIN LOGO
+   Point #main-logo's src (in index.html) at any image
+   in /images. It displays as-is, no color tint applied.
+--------------------------------------------------- */
+#main-logo {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  border-radius: 50%;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.action-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--pill);
+  border: 1px solid var(--panel-border);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 12px 20px;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.btn:hover {
+  background: var(--pill-hover);
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-wide {
+  padding: 12px 22px;
+}
+
+/* ---------------------------------------------------
+   ICON GROUP
+   Discord / YouTube / Configs sit together inside one
+   pill, like the reference photo, instead of three
+   separate buttons.
+--------------------------------------------------- */
+.icon-group {
+  display: flex;
+  align-items: center;
+  background: var(--pill);
+  border: 1px solid var(--panel-border);
+  border-radius: 999px;
+  padding: 0 4px;
+}
+
+.icon-divider {
+  width: 1px;
+  height: 22px;
+  background: var(--panel-border);
+}
+
+.btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+  border-radius: 999px;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.btn-icon:hover {
+  background: var(--pill-hover);
+}
+
+.btn-icon:active {
+  transform: scale(0.97);
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+}
+
+.btn-wide .icon {
+  width: 16px;
+  height: 16px;
+}
+
+.tagline {
+  margin: 0;
+  color: var(--text-dim);
+  font-size: 13px;
+}
+
+/* ---------------------------------------------------
+   CONFIGS MENU
+   Opens when the grid icon (far right button) is clicked
+--------------------------------------------------- */
+.config-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  width: 280px;
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 16px;
+  padding: 8px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+  animation: menu-in 0.15s ease;
+}
+
+@keyframes menu-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.config-menu-header {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
+  padding: 8px 10px 6px;
+}
+
+.config-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.config-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.config-row:hover {
+  background: var(--pill-hover);
+}
+
+.config-row-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.config-tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #7fe0a0;
+  background: rgba(127, 224, 160, 0.12);
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+.config-download {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--pill);
+  border: 1px solid var(--panel-border);
+  color: var(--text);
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+
+.config-download:hover {
+  background: var(--bg);
+}
+
+.config-download .icon {
+  width: 14px;
+  height: 14px;
+}
